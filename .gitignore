@@ -18,15 +18,5 @@ yarn-error.log
 .env.production
 /.phpunit.cache
 .phpunit.result.cache
-public/backend/assets/image/gifts
-public/backend/assets/image/games
-public/backend/assets/image/sliders
 public/backend/assets/image/avatars
-public/backend/assets/image/channels
-public/backend/assets/image/supports
-public/backend/assets/image/website_data
-public/backend/assets/image/payment_types
-public/backend/assets/image/level_settings
-public/backend/assets/image/game_categories
-public/backend/assets/image/activity_banners
-public/backend/assets/image/game_sub_categories
+public/backend/assets/image/documents

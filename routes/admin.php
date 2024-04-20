@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\TreeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -32,6 +33,11 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::post('change-user-password',[UserController::class,'changePassword'])->name('change.user.password');
     Route::get('user-documnet-detail/{id}',[UserController::class,'userDocumnetDetail'])->name('user.documnet.detail');
     Route::post('user-documnet-detail-update/{id}',[UserController::class,'userDocumnetDetailUpdate'])->name('user.documnet.detail.update');
+    Route::get('user-block/{id}/{status}',[UserController::class,'userBlock'])->name('user.block');
+    Route::get('user-verify/{id}/{status}',[UserController::class,'userVerify'])->name('user.verify');
+
+    //Tree
+    Route::get('tree',[TreeController::class,'index'])->name('tree');
 
     //Profile
     Route::get('profile',[ProfileController::class,'index'])->name('profile');

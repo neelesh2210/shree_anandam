@@ -12,6 +12,9 @@
                     </li>
                 @endisset
             </ol>
+            <b>Name: </b> {{$user->name}} <br>
+            <b>Phone Number: </b> {{$user->phone_number}} <br>
+            <b>Refeeral Code: </b> {{$user->referral_code}}
         </div>
         <div class="col-6">
             <div class="mt-3 text-right">
@@ -48,8 +51,12 @@
                                             <label class="custom-file-label" for="aadhar_front_image">Choose file</label>
                                         </div>
                                         @php
-                                            if(isset(optional($user->userDetail)->id_proof[0])){
-                                                $aadhar_front_image = optional($user->userDetail)->id_proof[0];
+                                            if(optional($user->userDetail)->id_proof_type == 'aadhar'){
+                                                if(isset(optional($user->userDetail)->id_proof[0])){
+                                                    $aadhar_front_image = optional($user->userDetail)->id_proof[0];
+                                                }else{
+                                                    $aadhar_front_image = 'no-image.png';
+                                                }
                                             }else{
                                                 $aadhar_front_image = 'no-image.png';
                                             }
@@ -68,8 +75,12 @@
                                             <label class="custom-file-label" for="aadhar_back_image">Choose file</label>
                                         </div>
                                         @php
-                                            if(isset(optional($user->userDetail)->id_proof[1])){
-                                                $aadhar_back_image = optional($user->userDetail)->id_proof[1];
+                                            if(optional($user->userDetail)->id_proof_type == 'aadhar'){
+                                                if(isset(optional($user->userDetail)->id_proof[1])){
+                                                    $aadhar_back_image = optional($user->userDetail)->id_proof[1];
+                                                }else{
+                                                    $aadhar_back_image = 'no-image.png';
+                                                }
                                             }else{
                                                 $aadhar_back_image = 'no-image.png';
                                             }
@@ -88,8 +99,12 @@
                                             <label class="custom-file-label" for="pan_image">Choose file</label>
                                         </div>
                                         @php
-                                            if(isset(optional($user->userDetail)->id_proof[0])){
-                                                $pan_image = optional($user->userDetail)->id_proof[0];
+                                            if(optional($user->userDetail)->id_proof_type == 'pan'){
+                                                if(isset(optional($user->userDetail)->id_proof[0])){
+                                                    $pan_image = optional($user->userDetail)->id_proof[0];
+                                                }else{
+                                                    $pan_image = 'no-image.png';
+                                                }
                                             }else{
                                                 $pan_image = 'no-image.png';
                                             }

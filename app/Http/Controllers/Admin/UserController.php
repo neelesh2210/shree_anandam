@@ -205,4 +205,28 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success','Documnet Updated Successfully!');
     }
 
+    public function userBlock($id,$status){
+        $user = User::find($id);
+        $user->is_block = $status;
+        $user->save();
+
+        if($status == '1'){
+            return redirect()->back()->with('error','User Blocked Successfully!');
+        }else{
+            return redirect()->back()->with('success','User Unblocked Successfully!');
+        }
+    }
+
+    public function userVerify($id,$status){
+        $user = User::find($id);
+        $user->is_verify = $status;
+        $user->save();
+
+        if($status == '1'){
+            return redirect()->back()->with('success','User Verified Successfully!');
+        }else{
+            return redirect()->back()->with('error','User Not Verified Successfully!');
+        }
+    }
+
 }

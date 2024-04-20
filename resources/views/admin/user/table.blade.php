@@ -30,38 +30,38 @@
                     <td class="text-center">
                         @if($user->is_block == '1')
                             @can('user-block')
-                                <a href="#">
-                                    <span class="badge badge-danger">Unblock</span>
+                                <a href="{{route('admin.user.block',[$user->id,'0'])}}">
+                                    <span class="badge badge-danger">Blocked</span>
                                 </a>
                             @else
-                                <span class="badge badge-danger">Unblock</span>
+                                <span class="badge badge-danger">Blocked</span>
                             @endcan
                         @else
                             @can('user-block')
-                                <a href="#">
-                                    <span class="badge badge-primary">Block</span>
+                                <a href="{{route('admin.user.block',[$user->id,'1'])}}">
+                                    <span class="badge badge-primary">Unblocked</span>
                                 </a>
                             @else
-                                <span class="badge badge-primary">Block</span>
+                                <span class="badge badge-primary">Unblocked</span>
                             @endcan
                         @endif
                     </td>
                     <td class="text-center">
                         @if($user->is_verify == '1')
                             @can('user-verify')
-                                <a href="#">
-                                    <span class="badge badge-danger">Verify</span>
+                                <a href="{{route('admin.user.verify',[$user->id,'0'])}}">
+                                    <span class="badge badge-primary">Verified</span>
                                 </a>
                             @else
-                                <span class="badge badge-danger">Verify</span>
+                                <span class="badge badge-primary">Verified</span>
                             @endcan
                         @else
                             @can('user-block')
-                                <a href="#">
-                                    <span class="badge badge-primary">Not Verify</span>
+                                <a href="{{route('admin.user.verify',[$user->id,'1'])}}">
+                                    <span class="badge badge-danger">Not Verified</span>
                                 </a>
                             @else
-                                <span class="badge badge-primary">Not Verify</span>
+                                <span class="badge badge-danger">Not Verified</span>
                             @endcan
                         @endif
                     </td>
