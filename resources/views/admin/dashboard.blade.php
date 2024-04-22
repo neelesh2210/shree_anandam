@@ -11,7 +11,7 @@
                         <h5>Users</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins"><i class="fa fa-users"></i> 0</h1>
+                        <h1 class="no-margins"><i class="fa fa-users"></i> {{$total_user}}</h1>
                         <small>Total User</small>
                     </div>
                 </div>

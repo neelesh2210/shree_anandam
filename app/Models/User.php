@@ -30,4 +30,8 @@ class User extends Authenticatable
         return $this->hasOne(UserDetail::class);
     }
 
+    public function referrer(){
+        return $this->hasOne(User::class,'referral_code','referrer_code');
+    }
+
 }
