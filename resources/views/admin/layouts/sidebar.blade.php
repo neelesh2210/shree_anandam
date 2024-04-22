@@ -25,9 +25,9 @@
                 </li>
             @endcan
 
-            <li @if(in_array(Route::currentRouteName(), ['admin.tree'])) class="active" @endif>
+            {{-- <li @if(in_array(Route::currentRouteName(), ['admin.tree'])) class="active" @endif>
                 <a href="{{route('admin.tree')}}"><i class="fa fa-users"></i> <span class="nav-label">Tree</span></a>
-            </li>
+            </li> --}}
 
             @canany(['role-list','staff-list'])
                 <li @if(in_array(Route::currentRouteName(), ['admin.roles.index','admin.roles.create','admin.roles.edit','admin.staffs.index','admin.staffs.create','admin.staffs.edit'])) class="active" @endif>
