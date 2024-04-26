@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\CampaignController;
 use App\Http\Controllers\Api\DocumentController;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
@@ -38,6 +39,9 @@ Route::middleware('auth:sanctum')->group( function () {
     //Document
     Route::get('get-document',[DocumentController::class,'index']);
     Route::post('update-document',[DocumentController::class,'store']);
+
+    //Campaign
+    Route::get('campaign-list',[CampaignController::class,'index']);
 
 });
 

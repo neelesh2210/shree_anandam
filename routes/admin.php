@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\TreeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\CampaignController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 
@@ -36,8 +36,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::get('user-block/{id}/{status}',[UserController::class,'userBlock'])->name('user.block');
     Route::get('user-verify/{id}/{status}',[UserController::class,'userVerify'])->name('user.verify');
 
-    //Tree
-    Route::get('tree',[TreeController::class,'index'])->name('tree');
+    //Campaign
+    Route::resource('campaigns', CampaignController::class)->except('show','destroy');
+    Route::get('campaigns-status/{id}/{status}', [CampaignController::class,'status'])->name('campaigns.status');
 
     //Profile
     Route::get('profile',[ProfileController::class,'index'])->name('profile');
