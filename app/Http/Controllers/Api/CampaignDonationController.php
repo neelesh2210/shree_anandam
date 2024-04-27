@@ -9,9 +9,26 @@ use App\Models\Campaign;
 use Illuminate\Http\Request;
 use App\Models\CampaignDonation;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\CampaignDonationResource;
 
 class CampaignDonationController extends Controller
 {
+
+    public function index(){
+        $campaign_donations = CampaignDonationResource::collection(CampaignDonation::where('user_id',Auth::user()->id)->paginate(20));
+
+        return response()->json([
+            'campaign_donations'=>$campaign_donations,
+            'links'                     =>[
+                'first_page_url'        => $campaign_donations->url($campaign_donations->firstItem()),
+                'last_page_url'         => $campaign_donations->url($campaign_donations->lastPage()),
+                'next_page_url'         => $campaign_donations->nextPageUrl(),
+                'prev_page_url'         => $campaign_donations->previousPageUrl(),
+            ],
+            'message'=>'campaign Donation List Retrived Successfully!',
+            'status'=>200
+        ],200);
+    }
 
     public function store(Request $request){
         $request->validate([

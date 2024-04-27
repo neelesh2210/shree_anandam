@@ -30,7 +30,9 @@
                         <b>Pan Number: </b>{{$campaign_donation->document_detail['pan_number']}} <br>
                         <b>Aadhar Number: </b>{{$campaign_donation->document_detail['aadhar_number']}}
                     </td>
-                    <td class="text-center">
+                    <td>
+                        <b>Amount: </b>₹ {{$campaign_donation->donation_amount}} <br>
+                        <b>Status: </b>
                         @if($campaign_donation->payment_status == 'initiated')
                             <span class="badge badge-success">Initiated</span>
                         @elseif($campaign_donation->payment_status == 'success')

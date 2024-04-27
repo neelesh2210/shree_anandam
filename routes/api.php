@@ -45,6 +45,7 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::get('campaign-list',[CampaignController::class,'index']);
 
     //Campaign Donation
+    Route::get('campaign-donation-list',[CampaignDonationController::class,'index']);
     Route::post('campaign-donation',[CampaignDonationController::class,'store']);
 
 });
