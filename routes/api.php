@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\CampaignController;
 use App\Http\Controllers\Api\DocumentController;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\CampaignDonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::middleware('auth:sanctum')->group( function () {
 
     //Campaign
     Route::get('campaign-list',[CampaignController::class,'index']);
+
+    //Campaign Donation
+    Route::post('campaign-donation',[CampaignDonationController::class,'store']);
 
 });
 

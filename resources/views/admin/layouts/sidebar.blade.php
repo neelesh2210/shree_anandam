@@ -29,6 +29,10 @@
                 <a href="{{route('admin.campaigns.index')}}"><i class="fa fa-bullhorn"></i> <span class="nav-label">Campaign</span></a>
             </li>
 
+            <li @if(in_array(Route::currentRouteName(), ['admin.campaign.donation'])) class="active" @endif>
+                <a href="{{route('admin.campaign.donation')}}"><i class="fa fa-bullhorn"></i> <span class="nav-label">Campaign Donation</span></a>
+            </li>
+
             @canany(['role-list','staff-list'])
                 <li @if(in_array(Route::currentRouteName(), ['admin.roles.index','admin.roles.create','admin.roles.edit','admin.staffs.index','admin.staffs.create','admin.staffs.edit'])) class="active" @endif>
                     <a href="#"><i class="fa fa-users-cog"></i> <span class="nav-label">Staff Management</span>

@@ -18,5 +18,6 @@ class UserDetail extends Model
 
     protected $casts = [
         'id_proof' => 'array'
-];
+    ];
+
 }

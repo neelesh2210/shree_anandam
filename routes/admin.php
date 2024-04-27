@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CampaignController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\CampaignDonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     //Campaign
     Route::resource('campaigns', CampaignController::class)->except('show','destroy');
     Route::get('campaigns-status/{id}/{status}', [CampaignController::class,'status'])->name('campaigns.status');
+
+    //Campaign Donation
+    Route::get('campaign-donation',[CampaignDonationController::class,'index'])->name('campaign.donation');
 
     //Profile
     Route::get('profile',[ProfileController::class,'index'])->name('profile');
