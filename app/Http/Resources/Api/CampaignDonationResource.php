@@ -19,6 +19,7 @@ class CampaignDonationResource extends JsonResource
             'campaign_detail'   =>  ['slug'=>json_decode($this->campaign_detail)->slug,'title'=>json_decode($this->campaign_detail)->title,'image'=>asset('backend/assets/image/campaigns/'.json_decode($this->campaign_detail)->image)],
             'document_detail'   =>  $this->document_detail,
             'payment_status'   =>  $this->payment_status,
+            'date'   =>  $this->created_at->format('d-m-Y h:i A'),
             'receipt_url'   =>  null,
         ];
     }
