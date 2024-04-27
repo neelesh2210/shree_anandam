@@ -72,6 +72,9 @@ class CampaignDonationController extends Controller
             $campaign_donation->payment_status = 'success';
             $campaign_donation->save();
 
+            $campaign->total_raised_amount = $campaign->total_raised_amount + $request->donation_amount;
+            $campaign->save();
+
             return response()->json(['message'=>'Donation Successfull!','status'=>200],200);
         }else{
             return response()->json(['message'=>'User Not Found!','status'=>422],422);
