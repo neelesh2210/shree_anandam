@@ -77,7 +77,7 @@ class DocumentController extends Controller
                 $id_proof[] = imageUpload($request->file('pan_image'),'backend/assets/image/documents/');
             }else{
                 $request->validate([
-                    'pan_image'=>'nulable|mimes:png,jpg,jpeg,webp',
+                    'pan_image'=>'nullable|mimes:png,jpg,jpeg,webp',
                 ]);
                 if($request->has('pan_image')){
                     $id_proof[] = imageUpload($request->file('pan_image'),'backend/assets/image/documents/');
