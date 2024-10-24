@@ -34,4 +34,8 @@ class User extends Authenticatable
         return $this->hasOne(User::class,'referral_code','referrer_code');
     }
 
+    public function referral(){
+        return $this->hasMany(User::class,'parent_id');
+    }
+
 }

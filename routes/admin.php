@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CampaignController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -47,6 +51,28 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     //Profile
     Route::get('profile',[ProfileController::class,'index'])->name('profile');
     Route::post('profile-store',[ProfileController::class,'store'])->name('profile.store');
+
+    //Image
+    Route::get('image',[ImageController::class,'index'])->name('image.index');
+    Route::get('image/create',[ImageController::class,'create'])->name('image.create');
+    Route::post('image',[ImageController::class,'store'])->name('image.store');
+    Route::delete('image/{id}',[ImageController::class,'destroy'])->name('image.destroy');
+
+    //Event
+    Route::resource('event',EventController::class);
+
+    //About
+    Route::get('about',[AboutController::class,'index'])->name('about.index');
+    Route::get('about/create',[AboutController::class,'create'])->name('about.create');
+    Route::post('about',[AboutController::class,'store'])->name('about.store');
+    Route::get('about/show/{type}',[AboutController::class,'show'])->name('about.show');
+
+    //Social
+    Route::get('social',[SocialController::class,'index'])->name('social.index');
+    Route::get('social/create',[SocialController::class,'create'])->name('social.create');
+    Route::post('social',[SocialController::class,'store'])->name('social.store');
+    Route::delete('social/{type}',[SocialController::class,'destroy'])->name('social.destroy');
+
 
     //Change Password
     Route::post('change-password',[ProfileController::class,'changePassword'])->name('change.password');

@@ -18,6 +18,8 @@ yarn-error.log
 .env.production
 /.phpunit.cache
 .phpunit.result.cache
+public/backend/assets/image/events
+public/backend/assets/image/images
 public/backend/assets/image/avatars
 public/backend/assets/image/documents
 public/backend/assets/image/campaigns

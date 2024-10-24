@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\CampaignController;
 use App\Http\Controllers\Api\DocumentController;
@@ -31,6 +33,15 @@ Route::post('registration',[RegisterController::class,'registration']);
 Route::post('login',[LoginController::class,'login']);
 
 Route::middleware('auth:sanctum')->group( function () {
+
+    //Home
+    Route::get('home',[HomeController::class,'index']);
+
+    //Gallery
+    Route::get('gallery',[HomeController::class,'gallery']);
+
+    //Event
+    Route::get('event',[EventController::class,'index']);
 
     //Profile
     Route::get('get-profile',[ProfileController::class,'index']);

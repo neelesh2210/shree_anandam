@@ -30,7 +30,23 @@
             </li>
 
             <li @if(in_array(Route::currentRouteName(), ['admin.campaign.donation'])) class="active" @endif>
-                <a href="{{route('admin.campaign.donation')}}"><i class="fa fa-bullhorn"></i> <span class="nav-label">Campaign Donation</span></a>
+                <a href="{{route('admin.campaign.donation')}}"><i class="fas fa-hand-holding-usd"></i> <span class="nav-label">Campaign Donation</span></a>
+            </li>
+
+            <li @if(in_array(Route::currentRouteName(), ['admin.event.index','admin.event.create','admin.event.edit'])) class="active" @endif>
+                <a href="{{route('admin.event.index')}}"><i class="fas fa-calendar-alt"></i> <span class="nav-label">Event</span></a>
+            </li>
+
+            <li @if(in_array(Route::currentRouteName(), ['admin.image.index','admin.image.create'])) class="active" @endif>
+                <a href="{{route('admin.image.index')}}"><i class="fas fa-images"></i> <span class="nav-label">Image</span></a>
+            </li>
+
+            <li @if(in_array(Route::currentRouteName(), ['admin.about.index','admin.about.create'])) class="active" @endif>
+                <a href="{{route('admin.about.index')}}"><i class="fas fa-info-circle"></i> <span class="nav-label">About</span></a>
+            </li>
+
+            <li @if(in_array(Route::currentRouteName(), ['admin.social.index','admin.social.create'])) class="active" @endif>
+                <a href="{{route('admin.social.index')}}"><i class="fas fa-podcast"></i> <span class="nav-label">Social Link</span></a>
             </li>
 
             @canany(['role-list','staff-list'])

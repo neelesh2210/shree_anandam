@@ -13,7 +13,7 @@ class ProfileController extends Controller
 {
 
     public function index(){
-        $user = new ProfileResource(User::with('userDetail','referrer')->find(Auth::user()->id));
+        $user = new ProfileResource(User::with('userDetail','referrer','referral')->find(Auth::user()->id));
 
         return response()->json(['user'=>$user,'message'=>'Profile Retrived Successfully!','status'=>200],200);
     }
