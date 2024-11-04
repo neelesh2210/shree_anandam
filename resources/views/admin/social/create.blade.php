@@ -34,6 +34,7 @@
                                             <option value="">Select Type...</option>
                                             <option value="instagram" @if(old('type') == 'instagram') selected @endif>Instagram</option>
                                             <option value="youtube" @if(old('type') == 'youtube') selected @endif>Youtube</option>
+                                            <option value="facebook" @if(old('type') == 'facebook') selected @endif>Facebook</option>
                                         </select>
                                         @error('type')
                                             <span class="text-danger">{{$message}}</span>

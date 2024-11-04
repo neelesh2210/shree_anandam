@@ -20,7 +20,7 @@
             @endcan
 
             @can('user-index')
-                <li @if(in_array(Route::currentRouteName(), ['admin.users.index','admin.users.create','admin.users.edit','admin.user.documnet.detail'])) class="active" @endif>
+                <li @if(in_array(Route::currentRouteName(), ['admin.users.index','admin.users.create','admin.users.edit','admin.user.documnet.detail','admin.user.team'])) class="active" @endif>
                     <a href="{{route('admin.users.index')}}"><i class="fa fa-users"></i> <span class="nav-label">User</span></a>
                 </li>
             @endcan

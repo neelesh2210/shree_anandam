@@ -40,7 +40,7 @@ class RegisterController extends Controller
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
         $user->password = Hash::make($request->password);
-        $user->referral_code = mt_rand(11111111,99999999);
+        $user->referral_code = 'RIT'.mt_rand(11111111,99999999);
         $user->referrer_code = $referrer_code;
         $user->save();
 

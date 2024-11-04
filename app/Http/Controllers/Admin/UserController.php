@@ -82,7 +82,7 @@ class UserController extends Controller
         $user->phone_number = $request->phone_number;
         $user->address = $request->address;
         $user->password = Hash::make($request->password);
-        $user->referral_code = mt_rand(11111111,99999999);
+        $user->referral_code = 'RIT'.mt_rand(11111111,99999999);
         $user->referrer_code = $referrer_code;
         $user->save();
 
@@ -226,6 +226,13 @@ class UserController extends Controller
         }else{
             return redirect()->back()->with('error','User Not Verified Successfully!');
         }
+    }
+
+    public function userTeam($user_id){
+        $user = User::where('id',$user_id)->first();
+        $teams = User::where('parent_id',$user_id)->get();
+
+        return view('admin.user.team',compact('teams','user'),['page_title'=>'User']);
     }
 
 }

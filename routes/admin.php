@@ -40,6 +40,7 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::post('user-documnet-detail-update/{id}',[UserController::class,'userDocumnetDetailUpdate'])->name('user.documnet.detail.update');
     Route::get('user-block/{id}/{status}',[UserController::class,'userBlock'])->name('user.block');
     Route::get('user-verify/{id}/{status}',[UserController::class,'userVerify'])->name('user.verify');
+    Route::get('user-team/{id}',[UserController::class,'userTeam'])->name('user.team');
 
     //Campaign
     Route::resource('campaigns', CampaignController::class)->except('show','destroy');

@@ -11,7 +11,7 @@ class SocialController extends Controller
 
     public function index(){
         $socials = About::where(function($query){
-            $query->where('type','instagram')->orWhere('type','youtube');
+            $query->where('type','instagram')->orWhere('type','youtube')->orWhere('type','facebook');
         })->get();
 
         return view('admin.social.index',compact('socials'),['page_title'=>'Social']);
@@ -23,7 +23,7 @@ class SocialController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'type'  =>  'required|in:instagram,youtube',
+            'type'  =>  'required|in:instagram,youtube,facebook',
             'link' =>  'required'
         ]);
 

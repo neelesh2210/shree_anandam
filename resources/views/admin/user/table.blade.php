@@ -67,10 +67,9 @@
                     </td>
                     @can('user-edit')
                         <td class="text-center">
-                            <span>
-                                <a class="btn btn-warning dim text-white pt-2" data-toggle="tooltip" data-placement="top" data-original-title="Change Password" onclick="showChangeUserPassword('{{$user->id}}')"><i class="fa fa-key"></i></a>
-                            </span>
+                            <a class="btn btn-warning dim text-white pt-2" data-toggle="tooltip" data-placement="top" data-original-title="Change Password" onclick="showChangeUserPassword('{{$user->id}}')"><i class="fa fa-key"></i></a>
                             <a class="btn btn-primary dim text-white pt-2" href="{{route('admin.user.documnet.detail',$user->id)}}" data-toggle="tooltip" data-placement="top" data-original-title="Update Document Detail"><i class="fa fa-file-alt"></i></a>
+                            <a class="btn btn-default dim text-white pt-2" href="{{route('admin.user.team',$user->id)}}" data-toggle="tooltip" data-placement="top" data-original-title="Team"><i class="fa fa-users" style="color: black;"></i></a>
                             @can('user-edit')
                                 <x-admin.edit-button route="{{route('admin.users.edit', $user->id)}}" />
                             @endcan

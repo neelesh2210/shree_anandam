@@ -30,6 +30,34 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <span class="label label-success float-right">Total</span>
+                        </div>
+                        <h5>Donation</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins"><i class="fa fa-bullhorn"></i> {{$total_donation}}</h1>
+                        <small>Total Donation</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <div class="ibox-tools">
+                            <span class="label label-success float-right">Total</span>
+                        </div>
+                        <h5>Donation Amount</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins"><i class="fa fa-bullhorn"></i> {{$total_donation_amount}}</h1>
+                        <small>Total Donation Amount</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

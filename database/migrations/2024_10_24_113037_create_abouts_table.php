@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->longText('about');
-            $table->enum('type', ['sansthan', 'guruji', 'youtube', 'instagram']);
+            $table->enum('type', ['sansthan', 'guruji', 'youtube', 'instagram', 'facebook']);
             $table->timestamps();
         });
     }
