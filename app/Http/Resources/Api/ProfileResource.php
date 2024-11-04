@@ -15,7 +15,7 @@ class ProfileResource extends JsonResource
             'phone_number'              =>  $this->phone_number,
             'address'                   =>  $this->address,
             'referral_code'             =>  $this->referral_code,
-            'referrer_detail'           =>  ['name'=>$this->referrer?->name,'phone_number'=>$this->referrer?->phone_number,'address'=>$this->referrer?->address,'referral_code'=>$this->referrer?->referral_code,'photo'=>$this->referrer?->userDetail?->photo?asset('backend/assets/image/documents/'.$this->userDetail?->photo):asset('backend/assets/image/no-image.png'),],
+            'referrer_detail'           =>  $this->referrer_code?['name'=>$this->referrer?->name,'phone_number'=>$this->referrer?->phone_number,'address'=>$this->referrer?->address,'referral_code'=>$this->referrer?->referral_code,'photo'=>$this->referrer?->userDetail?->photo?asset('backend/assets/image/documents/'.$this->userDetail?->photo):asset('backend/assets/image/no-image.png'),]:null,
             'photo'                     =>  $this->userDetail?->photo?asset('backend/assets/image/documents/'.$this->userDetail?->photo):asset('backend/assets/image/no-image.png'),
             'referral'                  =>  []
         ];
